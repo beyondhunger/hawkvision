@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "HawkVision Recruitment",
@@ -16,29 +17,7 @@ export default function RootLayout({
       <body className="text-slate-100">
 
         {/* HEADER */}
-        <header className="border-b border-white/10 bg-slate-950/70 backdrop-blur">
-          <nav className="container mx-auto flex items-center justify-between py-4 px-4">
-            <h1 className="text-2xl font-bold tracking-tight text-white">
-              HawkVision
-            </h1>
-
-            <ul className="flex gap-4 text-base font-medium text-slate-200">
-              <li><a href="/" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Home</a></li>
-              <li><a href="/jobs" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Jobs</a></li>
-              <li><a href="/why-choose-us" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Why Choose Us</a></li>
-              <li><a href="/sectors" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Sectors</a></li>
-              <li><a href="/services" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Services</a></li>
-              <li>
-                <a
-                  href="/contact"
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white shadow-lg shadow-blue-900/50 hover:scale-[1.02] transition"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <SiteHeader />
 
         {/* PAGE CONTENT */}
         <main>{children}</main>
