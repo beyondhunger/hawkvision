@@ -1,25 +1,20 @@
 export default function AboutPage() {
   return (
-    <main className="py-20 bg-gray-50">
+    <main className="py-20 text-slate-100">
       <div className="container mx-auto px-6">
 
         {/* PAGE TITLE */}
-        <h1 className="text-5xl font-bold text-center mb-10">
-          About HawkVision Recruitment
-        </h1>
+        <div className="text-center mb-12">
+          <p className="uppercase tracking-[0.3em] text-sky-300 text-sm">About</p>
+          <h1 className="text-5xl font-bold">About HawkVision Recruitment</h1>
+        </div>
 
         {/* INTRO SECTION */}
-        <section className="bg-white p-10 rounded-xl shadow-md mb-16">
-          <p className="text-lg text-gray-700 leading-relaxed">
-            HawkVision Recruitment is a UK-based talent acquisition agency focused on 
-            connecting skilled professionals with leading companies. Our mission is to 
-            simplify the hiring process and empower businesses with exceptional talent 
-            that drives growth and success.
-          </p>
-          <p className="text-lg text-gray-700 leading-relaxed mt-4">
-            With industry expertise, advanced sourcing strategies, and a commitment to 
-            excellence, we support companies of all sizes — from startups to enterprise 
-            organizations — across multiple sectors.
+        <section className="glass-panel p-10 rounded-3xl mb-16">
+          <p className="text-lg leading-relaxed">
+            Hawkvision Recruitment delivers ethical, transparent, and fully compliant recruitment solutions
+            across healthcare, IT, and business support sectors, combining industry expertise with a strong
+            commitment to quality, compliance, and long-term partnerships.
           </p>
         </section>
 
@@ -27,22 +22,20 @@ export default function AboutPage() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
 
           {/* MISSION */}
-          <div className="bg-white p-10 rounded-xl shadow-md">
-            <h2 className="text-3xl font-bold mb-4 text-blue-700">Our Mission</h2>
-            <p className="text-gray-700 leading-relaxed">
-              To help businesses hire smarter and enable professionals to unlock 
-              meaningful career opportunities through transparent, efficient, 
-              and human-centered recruitment practices.
+          <div className="glass-panel p-10 rounded-3xl border-l-4 border-blue-500">
+            <h2 className="text-3xl font-bold mb-4 text-white">Our Mission</h2>
+            <p className="text-slate-200 leading-relaxed">
+              To help businesses hire smarter and enable professionals to unlock meaningful career opportunities
+              through transparent, efficient, and human-centered recruitment practices.
             </p>
           </div>
 
           {/* VISION */}
-          <div className="bg-white p-10 rounded-xl shadow-md">
-            <h2 className="text-3xl font-bold mb-4 text-blue-700">Our Vision</h2>
-            <p className="text-gray-700 leading-relaxed">
-              To become the most trusted recruitment partner in the UK by delivering 
-              innovative hiring solutions and building long-term relationships with 
-              employers and job seekers alike.
+          <div className="glass-panel p-10 rounded-3xl border-l-4 border-indigo-500">
+            <h2 className="text-3xl font-bold mb-4 text-white">Our Vision</h2>
+            <p className="text-slate-200 leading-relaxed">
+              To become the most trusted recruitment partner in the UK by delivering innovative hiring solutions
+              and building long-term relationships with employers and job seekers alike.
             </p>
           </div>
 
@@ -53,28 +46,25 @@ export default function AboutPage() {
           <h2 className="text-4xl font-bold text-center mb-10">Our Core Values</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-semibold mb-3 text-blue-700">Integrity</h3>
-              <p className="text-gray-700">
-                We believe in honesty, transparency, and ethical hiring practices.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-semibold mb-3 text-blue-700">Excellence</h3>
-              <p className="text-gray-700">
-                We deliver quality-focused recruitment solutions with attention to detail.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-semibold mb-3 text-blue-700">Commitment</h3>
-              <p className="text-gray-700">
-                We are dedicated to helping businesses grow and candidates succeed.
-              </p>
-            </div>
-
+            {[
+              { title: "Integrity", desc: "Honesty, transparency, and ethical hiring practices." },
+              { title: "Excellence", desc: "Quality-focused recruitment with attention to detail." },
+              { title: "Commitment", desc: "Dedicated to helping businesses grow and candidates succeed." },
+            ].map((value, index) => (
+              <div
+                key={value.title}
+                className={`rounded-2xl p-8 shadow-2xl shadow-slate-900/30 border border-white/10 ${
+                  index === 0
+                    ? "bg-gradient-to-br from-blue-600/70 to-indigo-700/70"
+                    : index === 1
+                      ? "bg-gradient-to-br from-purple-600/70 to-pink-600/60"
+                      : "bg-gradient-to-br from-cyan-600/70 to-emerald-600/60"
+                }`}
+              >
+                <h3 className="text-2xl font-semibold mb-3 text-white">{value.title}</h3>
+                <p className="text-slate-100">{value.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -85,27 +75,19 @@ export default function AboutPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-
-            <div className="bg-white p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-3xl font-bold text-blue-700 mb-2">10+</h3>
-              <p className="text-gray-600">Years of Combined Expertise</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-3xl font-bold text-blue-700 mb-2">200+</h3>
-              <p className="text-gray-600">Successful Placements</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-3xl font-bold text-blue-700 mb-2">50+</h3>
-              <p className="text-gray-600">Companies Served</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-3xl font-bold text-blue-700 mb-2">100%</h3>
-              <p className="text-gray-600">Client Satisfaction</p>
-            </div>
-
+            {[
+              { value: "10+", label: "Years of Combined Expertise", accent: "from-blue-500 to-indigo-500" },
+              { value: "200+", label: "Successful Placements", accent: "from-purple-500 to-pink-500" },
+              { value: "50+", label: "Companies Served", accent: "from-cyan-500 to-emerald-500" },
+              { value: "100%", label: "Client Satisfaction", accent: "from-amber-500 to-red-500" },
+            ].map((item) => (
+              <div key={item.label} className="glass-panel p-8 rounded-3xl text-center">
+                <div className={`mx-auto mb-3 inline-flex items-center justify-center rounded-full px-5 py-2 text-lg font-bold bg-gradient-to-r ${item.accent}`}>
+                  {item.value}
+                </div>
+                <p className="text-slate-200">{item.label}</p>
+              </div>
+            ))}
           </div>
         </section>
 

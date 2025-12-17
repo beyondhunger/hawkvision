@@ -40,26 +40,32 @@ export default function JobsPage() {
   ];
 
   return (
-    <main className="py-20 bg-gray-50">
+    <main className="py-20 text-slate-100">
       <div className="container mx-auto px-6">
 
         {/* PAGE TITLE */}
-        <h1 className="text-5xl font-bold text-center mb-12">Available Job Openings</h1>
+        <div className="text-center mb-12">
+          <p className="uppercase tracking-[0.3em] text-sky-300 text-sm">Careers</p>
+          <h1 className="text-5xl font-bold">Available Job Openings</h1>
+          <p className="text-slate-300 mt-4">Explore the latest opportunities across healthcare, IT, and support functions.</p>
+        </div>
 
         {/* JOBS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {jobs.map((job) => (
+          {jobs.map((job, index) => (
             <div
               key={job.id}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition"
+              className={`p-8 rounded-2xl border border-white/10 backdrop-blur shadow-2xl shadow-slate-900/30 ${
+                index % 2 === 0 ? "bg-white/5" : "bg-gradient-to-br from-blue-600/20 to-slate-900/40"
+              }`}
             >
-              <h2 className="text-2xl font-bold mb-3">{job.title}</h2>
-              <p className="text-gray-500 mb-2">{job.location}</p>
-              <p className="text-gray-700 mb-4">{job.description}</p>
+              <h2 className="text-2xl font-bold mb-2 text-white">{job.title}</h2>
+              <p className="text-slate-300 mb-3">{job.location}</p>
+              <p className="text-slate-200 mb-5">{job.description}</p>
 
               <a
                 href={`/jobs/${job.id}`}
-                className="text-blue-600 font-semibold hover:underline"
+                className="inline-flex items-center gap-2 text-sky-300 font-semibold hover:translate-x-1 transition"
               >
                 View Details →
               </a>

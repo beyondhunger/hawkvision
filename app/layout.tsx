@@ -13,19 +13,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900">
+      <body className="text-slate-100">
 
         {/* HEADER */}
-        <header className="border-b bg-white">
+        <header className="border-b border-white/10 bg-slate-950/70 backdrop-blur">
           <nav className="container mx-auto flex items-center justify-between py-4 px-4">
-            <h1 className="text-2xl font-bold">HawkVision</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-white">
+              HawkVision
+            </h1>
 
-            <ul className="flex gap-6 text-lg">
-              <li><a href="/" className="hover:text-blue-600">Home</a></li>
-              <li><a href="/jobs" className="hover:text-blue-600">Jobs</a></li>
-              <li><a href="/about" className="hover:text-blue-600">About</a></li>
-              <li><a href="/services" className="hover:text-blue-600">Services</a></li>
-              <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
+            <ul className="flex gap-4 text-base font-medium text-slate-200">
+              <li><a href="/" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Home</a></li>
+              <li><a href="/jobs" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Jobs</a></li>
+              <li><a href="/why-choose-us" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Why Choose Us</a></li>
+              <li><a href="/sectors" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Sectors</a></li>
+              <li><a href="/services" className="px-3 py-2 rounded-full hover:text-white hover:bg-blue-600/30 transition">Services</a></li>
+              <li>
+                <a
+                  href="/contact"
+                  className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white shadow-lg shadow-blue-900/50 hover:scale-[1.02] transition"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </nav>
         </header>
@@ -34,13 +44,13 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* FOOTER */}
-        <footer className="bg-gray-900 text-gray-300 mt-20 py-14">
+        <footer className="bg-[#03071c] border-t border-white/10 mt-20 py-14 text-slate-300">
           <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
             {/* COLUMN 1 */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">HawkVision</h2>
-              <p className="text-gray-400">
+              <p className="text-slate-400">
                 Connecting businesses with top-tier talent and helping professionals
                 find meaningful careers across the UK.
               </p>
@@ -52,7 +62,8 @@ export default function RootLayout({
               <ul className="space-y-2">
                 <li><a href="/" className="hover:text-white">Home</a></li>
                 <li><a href="/jobs" className="hover:text-white">Jobs</a></li>
-                <li><a href="/about" className="hover:text-white">About</a></li>
+                <li><a href="/why-choose-us" className="hover:text-white">Why Choose Us</a></li>
+                <li><a href="/sectors" className="hover:text-white">Sectors Overview</a></li>
                 <li><a href="/services" className="hover:text-white">Services</a></li>
                 <li><a href="/contact" className="hover:text-white">Contact</a></li>
               </ul>
@@ -79,17 +90,17 @@ export default function RootLayout({
                 <li>✉️ support@hawkvision.co.uk</li>
               </ul>
 
-              <div className="flex gap-4 mt-4">
-                <a href="#" className="hover:text-white text-xl">🌐</a>
-                <a href="#" className="hover:text-white text-xl">🔗</a>
-                <a href="#" className="hover:text-white text-xl">📘</a>
-                <a href="#" className="hover:text-white text-xl">🐦</a>
+              <div className="flex gap-4 mt-4 text-2xl">
+                <a href="#" className="hover:text-white transition">🌐</a>
+                <a href="#" className="hover:text-white transition">🔗</a>
+                <a href="#" className="hover:text-white transition">📘</a>
+                <a href="#" className="hover:text-white transition">🐦</a>
               </div>
             </div>
 
           </div>
 
-          <p className="text-center text-gray-500 mt-12">
+          <p className="text-center text-slate-500 mt-12">
             © {new Date().getFullYear()} HawkVision Recruitment. All rights reserved.
           </p>
         </footer>
